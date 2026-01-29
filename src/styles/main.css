@@ -1,0 +1,66 @@
+/* =============== ORDER HISTORY STYLES =============== */
+.orders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .orders-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.order-card {
+  transition: all 0.2s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Empty state enhancements */
+.empty-state {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: #6b7280;
+}
+
+.empty-state svg {
+  margin: 0 auto 1.5rem;
+  display: block;
+  color: #3b82f6;
+}
+
+/* Error state styling */
+.alert {
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.alert.error {
+  background-color: #fef2f2;
+  border-left: 4px solid #ef4444;
+  color: #b91c1c;
+}
+
+/* Accessibility focus states */
+.order-card:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Print-friendly order details */
+@media print {
+  .order-card {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+  }
+  body {
+    background: white !important;
+  }
+}
